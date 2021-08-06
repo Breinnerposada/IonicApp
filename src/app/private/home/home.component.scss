@@ -1,0 +1,35 @@
+.info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.start{
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.letra {
+    font-size: 8px;
+  }
+  
+  super-tab-button {
+    padding: 0;
+  }
+  
+  super-tabs-toolbar {
+    height: 70px;
+    color: var(--ion-color-primary);
+    background: #fff;
+  }
+  
+  .userDetails {
+    padding: 5px 0;
+    .letraNombre {
+      font-size: 14px;
+      color: #333;
+    }
+  }
+  

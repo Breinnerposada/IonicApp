@@ -1,0 +1,73 @@
+<ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start" (click)="navigateTohome()">
+          <ion-icon name="chevron-back-outline" style="font-size: 25px"></ion-icon>
+        <!-- <ion-back-button>
+        </ion-back-button> -->
+      </ion-buttons>
+      <ion-title>Orden de compra</ion-title>
+    </ion-toolbar>
+    <ion-toolbar>
+      <div class="price">
+        <span>
+          Precio Total
+          <strong>${{precioTotal}}</strong>
+        </span>
+      </div>
+    </ion-toolbar>
+  </ion-header>
+<ion-content>
+    <ion-card *ngFor="let item of carrito">
+         <ion-card-header>
+             <ion-card-subtitle>{{item.type}}</ion-card-subtitle>
+             <ion-card-title>{{item.name}} X1</ion-card-title>
+           </ion-card-header>
+           <ion-card-content>
+               {{item.description}}
+               <div class="info">
+                   <div class="start">
+                       <ion-icon name="star-outline" color="warning"></ion-icon>
+                       <ion-badge slot="end" color="primary">{{item.score}}</ion-badge>
+                   </div>
+                   $ {{item.precio}}
+               </div>
+               <ion-button (click)="deleteProduct(item)" expand="block" fill="clear" shape="round" color="danger">
+                   Eliminar Producto
+               </ion-button>
+           </ion-card-content>
+     </ion-card>
+     <div class="img" *ngIf="carrito.length === 0">
+         <!-- <img src="../../../assets/undraw_empty_cart_co35.svg" alt=""> -->
+         <ion-list *ngFor="let item of [1,1,1,1,1]">
+            <ion-list-header>
+              <ion-label>
+                <ion-skeleton-text animated style="width: 100%"></ion-skeleton-text>
+              </ion-label>
+            </ion-list-header>
+            <ion-item>
+              <ion-avatar slot="start">
+                <ion-skeleton-text animated></ion-skeleton-text>
+              </ion-avatar>
+              <ion-label>
+                <h3>
+                  <ion-skeleton-text animated style="width: 100%"></ion-skeleton-text>
+                </h3>
+                <p>
+                  <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+                </p>
+                <p>
+                  <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+                </p>
+              </ion-label>
+            </ion-item>
+          </ion-list>
+
+     </div>
+
+     <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+      <ion-fab-button color="primary" (click)="shoppingCart()" >
+        <ion-icon name="cart-outline"></ion-icon>
+            </ion-fab-button>
+     </ion-fab>
+    </ion-content>
+

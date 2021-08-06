@@ -1,0 +1,48 @@
+  <app-header [title]="'Ionic Store'"></app-header>
+<ion-content>
+    <super-tabs>
+      <super-tabs-toolbar color="primary" slot="bottom">
+          <super-tab-button>
+            <ion-icon name="bag-handle-outline"></ion-icon>
+            <ion-label class="letra">Listado de productos</ion-label>
+          </super-tab-button>
+  
+          <super-tab-button>
+            <ion-icon name="card-outline"></ion-icon>
+              <ion-label class="letra">Historial de compras</ion-label>
+          </super-tab-button>
+      </super-tabs-toolbar>
+  
+      <super-tabs-container>
+          <super-tab>
+              <ion-content>
+                  <ion-card *ngFor="let item of products" (click)="showDetailsProduct(item)">
+                      <img [src]="item.img_url" style="height: 300px; width: 100%"/>
+                      <ion-card-header>
+                          <ion-card-subtitle>{{item.type}}</ion-card-subtitle>
+                          <ion-card-title>{{item.name}}</ion-card-title>
+                        </ion-card-header>
+                        <ion-card-content>
+                            {{item.description}}
+                            <div class="info">
+                                <div class="start">
+                                    <ion-icon name="star-outline" color="warning"></ion-icon>
+                                    <ion-badge slot="end" color="primary">{{item.score}}</ion-badge>
+                                </div>
+                                $ {{item.precio}}
+                            </div>
+                        </ion-card-content>
+                      </ion-card>
+              </ion-content>
+          </super-tab>
+          <super-tab>
+              <ion-content class="ion-padding">
+                  <app-details-carts></app-details-carts>
+              </ion-content>
+          </super-tab>
+      </super-tabs-container>
+  </super-tabs>
+</ion-content>
+
+
+  

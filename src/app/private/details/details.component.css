@@ -1,0 +1,12 @@
+.info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.start{
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
