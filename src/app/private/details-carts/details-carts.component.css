@@ -10,3 +10,15 @@
     align-items: center;
     justify-content: space-between;
 }
+
+ion-card{
+    box-shadow: rgb(58 255 1 / 33%) 0px 4px 16px;
+}
+
+.img{
+    display: flex;
+    justify-content: center;
+    height: 75%;
+    align-items: center;
+    width: 100%;
+}

@@ -22,7 +22,7 @@ export class UiService {
   async alertaInformativa(message: string) {
     const alert = await this.alertController.create({
       cssClass: "buttoncss",
-      header: "Solo lectura",
+      header: "Accion Realizada Con Exito",
       subHeader: "",
       message,
       buttons: ["OK"],

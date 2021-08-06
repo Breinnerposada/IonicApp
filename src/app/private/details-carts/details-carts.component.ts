@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./details-carts.component.css']
 })
 export class DetailsCartsComponent implements OnInit {
-  carritos;
+  carritos:any[] = [];
   constructor(private cartService: cartsService,) { }
 
   ngOnInit(): void {
